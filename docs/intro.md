@@ -2,46 +2,26 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Kizuna Safe
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **Kizuna safe**.
 
-## Getting Started
+An entirely automated smart contract library that will enable any organization to easily generate and manage various kinds of decentralized insurance policies for its users.
 
-Get started by **creating a new site**.
+## Aim
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Our smart contract library aims to provide a comprehensive solution that simplifies the process of generating and managing decentralized insurance policies.
 
-### What you'll need
+By automating policy issuance, premium payments, and claims settlements through smart contracts, we empower organizations to offer seamless and secure insurance services to their users.
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+We are driven by the vision of democratizing insurance, making it adaptable to diverse needs, and fostering a future where individuals and businesses can confidently protect their assets in a decentralized and trustless manner.
 
-## Generate a new site
+## What it does
 
-Generate a new Docusaurus site using the **classic template**.
+**Revolutionize Insurance with Automated Contracts**
 
-The classic template will automatically be added to your project after you run the command:
+Introducing our powerful library that transforms the insurance industry! By seamlessly integrating our library into your organization's systems, you can automate the generation and management of insurance contracts, saving time and boosting efficiency.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## How do I use it?
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+See the [Getting Started](./getting-started) section.
