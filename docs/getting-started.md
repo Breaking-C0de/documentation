@@ -32,3 +32,49 @@ contract MyInsurancePolicy is BaseInsurancePolicy {
     // Implement your custom logic here
 }
 ```
+
+2. Initialize the contract: When deploying your insurance policy contract, pass the necessary parameters to initialize the `BaseInsurancePolicy` constructor. The constructor requires a `SharedData.Policy` object, the address of the Chainlink token (`LINK`), and the address of the price feed contract.
+
+```solidity
+constructor(
+    SharedData.Policy memory policy,
+    address _link,
+    address priceFeed
+) BaseInsurancePolicy(policy, _link, priceFeed) {
+    // Additional initialization logic, if required
+}
+```
+
+3. Implement custom logic: Override any necessary functions from BaseInsurancePolicy to tailor them to your specific insurance policy requirements. You can also add additional functions and modifiers as needed.
+
+   ```solidity
+   contract MyInsurancePolicy is BaseInsurancePolicy {
+   constructor(
+       SharedData.Policy memory policy,
+       address _link,
+       address priceFeed
+   ) BaseInsurancePolicy(policy, _link, priceFeed) {}
+
+   // Custom logic and overrides
+   }
+
+   ```
+
+4. Customize policy parameters: Use the setter functions provided by `BaseInsurancePolicy` to customize various policy parameters such as termination, claimability, policy activation, and more.
+
+```solidity
+function setTermination(bool isTerminate) public onlyAdmin {
+    // Logic to set policy termination
+}
+
+function setClaimable(bool isClaimable) public onlyAdmin {
+    // Logic to set policy claimability
+}
+
+function setPolicyActive(bool isPolicyActive) public onlyAdmin {
+    // Logic to set policy activation
+}
+
+// Additional setter functions
+```
+    
