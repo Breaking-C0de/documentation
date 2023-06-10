@@ -19,7 +19,7 @@ Start by creating a new Solidity file for your custom insurance contract. You ca
 
 ## Step 2: Import the BaseInsurancePolicy Contract
 
-Import the `BaseInsurancePolicy` contract from the `@breaking-c0de/contracts` package.
+Import the `BaseInsurancePolicy` contract from the `@kizunasafe/contracts` package.
 
 ```js
 import "@kizunasafe/contracts/BaseInsurancePolicy.sol";
@@ -99,4 +99,4 @@ for example, in this case, we will be overriding the custom `withdraw` function 
 
 ## Step 6: Test and Deploy
 
-Test your LifeInsurancePolicy contract using appropriate testing frameworks and tools. Refer to the [testing and deployment](/docs/test) sections for more details.
+Test your LifeInsurancePolicy contract using appropriate testing frameworks and tools. Refer to the [testing and deployment](./Deployment/Self%20Hosting%20Kizuna%20Safe.md) sections for more details.
