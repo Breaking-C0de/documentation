@@ -6,6 +6,10 @@ sidebar_position: 6
 
 `BaseInsurancePolicy.sol` is a smart contract that serves as a base for creating insurance policies. It provides a set of functions and data structures that can be inherited and customized by other insurance contracts. The contract leverages Chainlink automation, price feed, and keepers for various functionalities.
 
+## Arcitecture Diagram
+
+![Architecture Diagram](/img/architecture.png)
+
 ## Contract Overview
 
 The `BaseInsurancePolicy` contract is an abstract contract and cannot be deployed on its own. It is meant to be inherited by other contracts that implement specific insurance policies. The contract provides essential functions and modifiers to manage policy state, claim processing, payments, termination, and other policy-related operations.
