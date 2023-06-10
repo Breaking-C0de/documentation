@@ -17,17 +17,23 @@ Before you begin, make sure you have the following prerequisites in place:
 
 ## Installation
 
+# Set up
+ Install the shiro-store npm package that includes all contracts:
+
+`npm i @kizunasafe/kizuna-safe-contracts`
 To use BaseInsurancePolicy, you need to import the required dependencies. Ensure that you have the following contracts imported:
 
-```solidity
-import "@kizunasafe/contracts/BaseInsurancePolicy.sol";
+```js
+import "@kizunasafe/kizuna-safe-contracts/contracts/BaseInsurancePolicy.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/SharedData.sol";
+
 ```
 
 ## Creating a Policy
 
 1. Inherit from `BaseInsurancePolicy`: In your contract, inherit from `BaseInsurancePolicy` to utilize its functionalities. Make sure to implement any required overrides or additional logic specific to your insurance policy.
 
-```solidity
+```js
 contract MyInsurancePolicy is BaseInsurancePolicy {
     // Implement your custom logic here
 }
@@ -35,7 +41,7 @@ contract MyInsurancePolicy is BaseInsurancePolicy {
 
 2. Initialize the contract: When deploying your insurance policy contract, pass the necessary parameters to initialize the `BaseInsurancePolicy` constructor. The constructor requires a `SharedData.Policy` object, the address of the Chainlink token (`LINK`), and the address of the price feed contract.
 
-```solidity
+```js
 constructor(
     SharedData.Policy memory policy,
     address _link,
@@ -47,7 +53,7 @@ constructor(
 
 3. Implement custom logic: Override any necessary functions from BaseInsurancePolicy to tailor them to your specific insurance policy requirements. You can also add additional functions and modifiers as needed.
 
-   ```solidity
+   ```js
    contract MyInsurancePolicy is BaseInsurancePolicy {
    constructor(
        SharedData.Policy memory policy,
@@ -62,7 +68,7 @@ constructor(
 
 4. Customize policy parameters: Use the setter functions provided by `BaseInsurancePolicy` to customize various policy parameters such as termination, claimability, policy activation, and more.
 
-```solidity
+```js
 function setTermination(bool isTerminate) public onlyAdmin {
     // Logic to set policy termination
 }
