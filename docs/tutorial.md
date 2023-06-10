@@ -19,10 +19,11 @@ Start by creating a new Solidity file for your custom insurance contract. You ca
 
 ## Step 2: Import the BaseInsurancePolicy Contract
 
-Import the `BaseInsurancePolicy` contract from the `@kizunasafe/contracts` package.
+Import the `BaseInsurancePolicy` and  `SharedData.sol` contracts from the `@kizunasafe/kizuna-safe-contracts/contracts` package.
 
 ```js
-import "@kizunasafe/contracts/BaseInsurancePolicy.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/BaseInsurancePolicy.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/SharedData.sol";
 ```
 
 ## Step 3: Define Your Custom Structures and Errors
