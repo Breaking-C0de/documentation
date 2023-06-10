@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Tutorial
 
-In this tutorial, we will explain how users can create their own insurance contracts by inheriting from the `BaseInsurancePolicy` contract. We will use the [LifeInsurancePolicy.sol](https://github.com/Breaking-C0de/contracts/blob/dev/contracts/LifeInsurancePolicy.sol)
+In this tutorial, we will explain how users can create their own insurance contracts by inheriting from the `BaseInsurancePolicy` contract. We will use the [LifeInsurancePolicy.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/LifeInsurancePolicy.sol)
 contract as an example to demonstrate the step-by-step process.
 
 Let us first decide upon the basic requirements for our life insurance policy:
