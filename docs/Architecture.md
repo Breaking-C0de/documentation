@@ -8,7 +8,7 @@ sidebar_position: 6
 
 ## Arcitecture Diagram
 
-![Architecture Diagram](/img/architecture.png)
+![Architecture Diagram](/img/Architecture.png)
 
 ## Contract Overview
 
