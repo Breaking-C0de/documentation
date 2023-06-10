@@ -4,9 +4,12 @@ sidebar_position: 4
 
 # Policy Manager Contract
 
-- This page contains the documentation for the Policy Manager contract. This is a contract which is used to manage the insurance policies. It can mainly be used to fund an existing policy incase of shortages.
+- This page contains the documentation for the Policy Manager contract. This is a contract which is used to manage the insurance policies. It can mainly be used to fund an existing policy incase of shortages or withdraw funding from a deployed policy contract.
+
+  > :warning: **Caution**: The withdraw function only uses the BaseInsurancePolicy contract's withdraw function. It does not use the withdraw function of the child contracts. To make it use the child contract's withdraw function, the user needs to define a custom withdraw function in the PolicyManager contract or override the current withdraw function.
 
 - The user may or may not include a copy of the `PolicyManager.sol` in his/her file structure.
+- It is not necessary to use this contract to manage the insurance policies. The user can also manage the insurance policies directly. But using this contract will make the management process easier and more streamlined.
 
 ```js
 //SPDX-License-Identifier: MIT
@@ -17,7 +20,7 @@ import "./BaseInsurancePolicy.sol";
 
 /**
 @dev PolicyManager Contract
-note This contract can be used as a middleware to manage multiple policy contracts, 
+note This contract can be used as a middleware to manage multiple policy contracts,
 do functionalities like withdrawing or funding the policies */
 contract PolicyManager {
     //Events
@@ -94,7 +97,7 @@ contract PolicyManager {
     /**
     @dev function withdrawFundFromContract
     note This function is used to withdraw the coverageAmount from the contract
-    The function must be overidden if the withdraw functionality needs to be made different
+    The function must be overridden if the withdraw functionality needs to be made different
     */
     function withdrawFundFromContract(address payable contractAddress) public payable {
         // Get BaseContract
@@ -121,7 +124,7 @@ contract PolicyManager {
     @dev function terminatePolicy
     @param contractAddress address of the contract to be terminated
 
-    note after termination, the stored eth amount in policy will 
+    note after termination, the stored eth amount in policy will
     get transferred to the policyManager address of that policy */
     function terminatePolicy(address payable contractAddress) public payable {
         // Get BaseContract

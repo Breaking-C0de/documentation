@@ -8,6 +8,7 @@ In this tutorial, we will explain how users can create their own insurance contr
 contract as an example to demonstrate the step-by-step process.
 
 Let us first decide upon the basic requirements for our life insurance policy:
+
 - The policy should be able to accept premium payments from the policyholder.
 - Define nominees who will receive the payout in case of the policyholder's death.
 - Define percentage share of the payout for each nominee.
@@ -46,7 +47,7 @@ contract LifeInsurancePolicy is BaseInsurancePolicy {
 
 ## Step 4: Implement the Constructor
 
-Implement the constructor function for the LifeInsurancePolicy contract. The constructor should take parameters for the base insurance policy, the custom life policy parameters, Chainlink token address, and Chainlink price feed address. Also, make sure to call the BaseInsurancePolicy constructor using the BaseInsurancePolicy(policy, _link, priceFeed) syntax.
+Implement the constructor function for the LifeInsurancePolicy contract. The constructor should take parameters for the base insurance policy, the custom life policy parameters, Chainlink token address, and Chainlink price feed address. Also, make sure to call the BaseInsurancePolicy constructor using the BaseInsurancePolicy(policy, \_link, priceFeed) syntax.
 
 ```js
 constructor(
@@ -67,7 +68,7 @@ for example, in this case, we will be overriding the custom `withdraw` function 
 
 ```js
 @dev withdraw function
-    note here, the base withdraw function is overidden to implement custom logic in withdraw
+    note here, the base withdraw function is overridden to implement custom logic in withdraw
     according to the policy
     */
     function withdraw() public payable override isNotTerminated {

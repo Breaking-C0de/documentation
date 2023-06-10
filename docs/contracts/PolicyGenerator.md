@@ -6,6 +6,8 @@ sidebar_position: 4
 
 - This page contains the documentation for the Policy Generator contract. This contract can be used to deploy the child contracts derived from BaseInsurancePolicy contract.
 
+- It is not necessary to use this contract to deploy the child contracts. The user can also deploy the child contracts directly. But using this contract will make the deployment process easier and more streamlined.
+
 - The user needs to define their own deploy functions to deploy the custom policy contracts. An example for a lifePolicy contract is given below.
 
 - The user may or may not include a copy of the `PolicyGenerator.sol` in his/her file structure.
@@ -21,9 +23,9 @@ import "./SharedData.sol";
 
 /**
 @dev PolicyGenerator Contract
-note This contract can be used to generate the child contracts 
-derived from BaseInsurancePolicy contract. 
-note Add the deployCustomPolicy function to deploy the custom policy contracts 
+note This contract can be used to generate the child contracts
+derived from BaseInsurancePolicy contract.
+note Add the deployCustomPolicy function to deploy the custom policy contracts
 */
 contract PolicyGenerator {
     // Event to be emitted when a new policy is created
@@ -37,7 +39,7 @@ contract PolicyGenerator {
 
     /**
     @dev deployLifePolicy Function
-    note this is an example deploy function to deploy the LifeInsurancePolicy contract 
+    note this is an example deploy function to deploy the LifeInsurancePolicy contract
     using the policy generator
     */
     function deployLifePolicy(

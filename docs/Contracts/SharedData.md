@@ -10,7 +10,9 @@ sidebar_position: 4
 
 - The user can also make changes to the `SharedData.sol` contract as per their requirements and define custom structures, enums or data types.
 
-```js   //SPDX-License-Identifier: MIT
+  > :warning: **Caution**: Note that the **policyManagerAddress** is the address in which the policy amount will be transferred to in case policy is matured or the policy is terminated and the user has not claimed the policy amount. This address should be the address of the organization's wallet.
+
+```js //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 // building a library for shared data
@@ -19,7 +21,7 @@ library SharedData {
 
     /**
     @dev enum PolicyType
-    Add Your Inherited PolicyTypes in this enum 
+    Add Your Inherited PolicyTypes in this enum
     */
     enum PolicyType {
         Life,
@@ -89,20 +91,20 @@ library SharedData {
     @param totalCoverageByPolicy This is the total coverage by the policy
     @param hasClaimed This is a boolean to check if the policy has been claimed, should be set to true when policy is claimed
     @param isPolicyActive This is a boolean to check if the policy is active, different from terminated as inactive policies can be activated again
-    @param isClaimable This is a boolean to check if the policy is claimable, 
+    @param isClaimable This is a boolean to check if the policy is claimable,
     @param isTerminated This is a boolean to check if the policy is terminated, once set to true, the policy is over, no way to recover it
     @param hasFundedForCurrentInterval This is a boolean to check if the policy has been funded for the current month
     @param revivalRule This is the revival rule
     @param policyDetails This is the policy details
     @param policyType This is the policy type
-    @param policyManagerAddress This is the policy manager contract address 
+    @param policyManagerAddress This is the policy manager contract address
     @param admins This is the list of admins for the policy who are able to call certain functions
      */
     struct Policy {
         HumanDetails policyHolder;
         uint128 policyTenure;
         uint128 gracePeriod;
-        uint128 timeBeforeCommencement; 
+        uint128 timeBeforeCommencement;
         uint256 timeInterval; // 2630000 (in months) in seconds
         uint256 premiumToBePaid;
         uint256 totalCoverageByPolicy;

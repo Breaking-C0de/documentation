@@ -5,13 +5,15 @@ sidebar_position: 4
 # Base Insurance Policy Contract
 
 - This page contains the documentation for the Base Insurance Policy contract. This contract is the main parent contract that is used to derive the child contracts. It contains the basic functionalities that are common to all the child contracts.
-
-
+- The Base Insurance Policy Contract uses Chainlink Keepers to automate the crucial processes of premium collection and claims payment for insurance policies. Chainlink Keepers provide reliable and decentralized automation, ensuring timely execution of tasks triggered by policy-specified time intervals.
+- The Base Insurance Policy Contract uses Chainlink Any API to connect to any external API. This feature allows us to provide more flexible and customizable insurance solutions. For example, to validate a claim for a flight delay insurance policy, we can use some external Flight Delay API to get the flight status and validate the claim.
+- The Base Insurance Policy Contract uses Chainlink Price Feeds to provide reliable and accurate price data for a wide range of assets. We have integrated Chainlink Price Feeds into our smart contract library to ensure that our insurance policies are using real time price data to perform operations.
+- All these features are used in the Base Insurance Policy Contract and can be overridden in the child contracts to achieve modified and enhanced functionalities according to the needs.
 
 ```js
 /**
-note This contract is the base contract for all the insurance policies. 
-The functions can be overidden in the derived contracts to achieve desired functionality.
+note This contract is the base contract for all the insurance policies.
+The functions can be overridden in the derived contracts to achieve desired functionality.
 */
 
 // SPDX-License-Identifier: MIT
@@ -124,8 +126,8 @@ abstract contract BaseInsurancePolicy is AutomationCompatible, ChainlinkClient, 
 
     /**
     @dev function makeClaim
-    @notice this function is used to make a claim on the policy, once the policy is claimed 
-    now user can proceed to verify the details of claim by implementing methods like 
+    @notice this function is used to make a claim on the policy, once the policy is claimed
+    now user can proceed to verify the details of claim by implementing methods like
     DAO or Using API calls to validate data */
 
     function makeClaim() public onlyAdmin returns (bool claimed) {
@@ -181,8 +183,8 @@ abstract contract BaseInsurancePolicy is AutomationCompatible, ChainlinkClient, 
 
     /**
     @dev function withdraw
-    @notice this function is used to withdraw the fund from policy, 
-    function can be overidden to implement custom withdrawal logic 
+    @notice this function is used to withdraw the fund from policy,
+    function can be overridden to implement custom withdrawal logic
     */
     function withdraw() public payable virtual onlyAdmin isNotTerminated {
         uint256 withdrawableAmount = s_policy.totalCoverageByPolicy;
@@ -196,12 +198,12 @@ abstract contract BaseInsurancePolicy is AutomationCompatible, ChainlinkClient, 
     /***** Chainlink Functionalities *****/
     /**
     @dev Chainlink Keepers Implementation
-    @notice Chainlink Keepers is used to automatically check the policy activity. 
-    It checks if the policy has been funded and takes decision based on the status of 
+    @notice Chainlink Keepers is used to automatically check the policy activity.
+    It checks if the policy has been funded and takes decision based on the status of
     the funding. The policy also gets automatically termainted when the timePassedSinceCreation
     surpasses the policyTenure
-    
-    @notice The function can be overidden to adjust according to the needs
+
+    @notice The function can be overridden to adjust according to the needs
     */
 
     function checkUpkeep(
@@ -289,8 +291,8 @@ abstract contract BaseInsurancePolicy is AutomationCompatible, ChainlinkClient, 
     @param jobId the jobId of the Chainlink node depending on the type of data you want to get
     @param oracle the associated oracle address to the API that you want to use
     @notice  The requestVolumeData function can be used to call any API and get the response
-    
-    @notice The function can be overidden to adjust according to the needs, 
+
+    @notice The function can be overridden to adjust according to the needs,
     for example if you want to get multiple variables data*/
     function requestVolumeData(
         string memory url,
