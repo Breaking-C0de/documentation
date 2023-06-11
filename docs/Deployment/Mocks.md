@@ -6,9 +6,9 @@ sidebar_position: 3
 
 > :warning: **Caution**: The following three mock contracts need to be imported and they need to be deployed before deploying the policy contracts.
 
-- [MockV3Aggregator.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/test/MockV3Aggregator.sol)
-- [LinkToken.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/test/LinkToken.sol)
-- [VRFCoordinatorV2Mock.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/test/VRFCoordinatorV2Mock.sol)
+- [MockV3Aggregator.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/v08/mock/MockV3Aggregator.sol)
+- [LinkToken.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/v04/mocks/LinkToken.sol)
+- [VRFCoordinatorV2Mock.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/v08/mock/VRFCoordinatorV2Mock.sol)
 
 ## Script for deploying Mocks
 
@@ -48,9 +48,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 }
 module.exports.tags = ["all", "mocks", "main"]
 ```
-Set up all files as specified in the [Installation](/docs/Deployment/Installation) section.
 
-Now, add the following code to your contract deploy script
+### Set up all files as specified in the [Installation](/docs/Deployment/Installation) section.
+
+### Now, add the following code to your contract deploy script
 
 
 ```js

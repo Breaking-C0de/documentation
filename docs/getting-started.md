@@ -24,8 +24,8 @@ Before you begin, make sure you have the following prerequisites in place:
 To use BaseInsurancePolicy, you need to import the required dependencies. Ensure that you have the following contracts imported:
 
 ```js
-import "@kizunasafe/kizuna-safe-contracts/contracts/BaseInsurancePolicy.sol";
-import "@kizunasafe/kizuna-safe-contracts/contracts/SharedData.sol";
+import "@kizunasafe/kizuna-safe-contracts/v08/BaseInsurancePolicy.sol";
+import "@kizunasafe/kizuna-safe-contracts/v08/SharedData.sol";
 
 ```
 
