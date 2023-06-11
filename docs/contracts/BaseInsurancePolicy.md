@@ -10,6 +10,13 @@ sidebar_position: 4
 - The Base Insurance Policy Contract uses Chainlink Price Feeds to provide reliable and accurate price data for a wide range of assets. We have integrated Chainlink Price Feeds into our smart contract library to ensure that our insurance policies are using real time price data to perform operations.
 - All these features are used in the Base Insurance Policy Contract and can be overridden in the child contracts to achieve modified and enhanced functionalities according to the needs.
 
+## Note: Modifiers
+BaseInsurancePolicy contract makes use of a number of modifiers including:
+- `onlyAdmin` -- To check that the caller is the admin of the policy. An admin is a user that can handle the insurance policy functions such as `withdraw`, `terminatePolicy`, etc. Thus, it mainly includes authorization for functions that the policy holder can invoke.
+- `onlyManager` -- To check that the caller is the manager of the policy. Managers can interact and change the variables of the policy contract directly such as `setTermination`, `setClaimable`, `setPolicyActive` etc. It is a subset of the admin role.
+- `isNotTerminated` -- To check that the policy is active and has not already been terminated.
+
+ > **Note**: By default, the policyManagerAddress, collaborators and deployer of the contract are managers. The policy holder is the admin of the contract along with the managers. This list can be modified by adding more collaborators while deploying the contract. A user defined list of addresses can be specified in the collaborators argument of the constructor.
 ```js
 /**
 note This contract is the base contract for all the insurance policies.

@@ -663,4 +663,4 @@ In this test, we are doing the following things:
 
 ### Conclusion
 
-This tutorial showcases one of the many strategies that you can be used to verify a claim made on the contract. You can use any strategy that you want to verify the claim. The only thing that you need to make sure is that the strategy that you are using is not vulnerable to any kind of attack.
+This tutorial showcases one of the many strategies that can be used to verify a claim made on the contract. You can use any strategy that you want to verify the claim. The only thing that you need to make sure is that the strategy that you are using is not vulnerable to any kind of attack.
