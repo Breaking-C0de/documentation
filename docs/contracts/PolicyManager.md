@@ -97,7 +97,7 @@ contract PolicyManager {
     /**
     @dev function withdrawFundFromContract
     note This function is used to withdraw the coverageAmount from the contract
-    The function must be overridden if the withdraw functionality needs to be made different
+    The function must be overidden if the withdraw functionality needs to be made different
     */
     function withdrawFundFromContract(address payable contractAddress) public payable {
         // Get BaseContract
