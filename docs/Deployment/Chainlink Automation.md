@@ -1,13 +1,15 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Chainlink Automation
 
-## Why  
+## Why
+
 To automate the process of premium collection of the insurance policy, we have used Chainlink Keepers. Chainlink Keepers provide reliable and decentralized automation, ensuring timely execution of tasks triggered by policy-specified time intervals.
 
 ## Set up
+
 - Go to https://automation.chain.link/
 - Click on "Register new upkeep"
 - Trigger - "Custom logic"

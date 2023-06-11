@@ -31,7 +31,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="An entirely automated smart contract library that will enable any organization to easily generate and manage various kinds of decentralized insurance policies for its users."
     >
       <HomepageHeader />

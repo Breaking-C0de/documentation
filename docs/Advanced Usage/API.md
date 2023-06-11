@@ -53,4 +53,6 @@ module.exports.tags = ["all", "APICall", "main"];
 
 - Thus, in this way a claim can be verified using external API calls. For instance, to validate a claim for a flight delay insurance policy, we can follow the above procedure and make calls to an external flight Delay API to get the flight status and validate the claim.
 
+- You need to fund the contract with LINK tokens to make the API calls. You can get LINK tokens from the [Chainlink Faucet](https://faucets.chain.link/mumbai).
+
 - Once the claim has been validated, the `isClaimable` property of the policy will be set to True depending on the result of the API call.
