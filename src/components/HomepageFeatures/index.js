@@ -8,10 +8,10 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        Revolutionize Insurance with Automated Contracts. By seamlessly
-        integrating our library into your organization's systems, you can
-        automate the generation and management of insurance contracts, saving
-        time and boosting efficiency..
+        Revolutionize Insurance with Secured, Tested & Automated Contracts. By
+        seamlessly integrating our library into your organization's systems, you
+        can automate the generation and management of insurance contracts,
+        saving time and boosting efficiency.
       </>
     ),
   },

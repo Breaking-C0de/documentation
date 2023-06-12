@@ -90,28 +90,15 @@ const config = {
             ],
           },
           {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/kizunasafe",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/kizunasafe",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/kizunasafe",
-              },
-            ],
-          },
-          {
             title: "More",
             items: [
               {
                 label: "GitHub",
                 href: "https://github.com/Breaking-C0de/contracts",
+              },
+              {
+                label: "Chainlink",
+                href: "https://chain.link/",
               },
             ],
           },
