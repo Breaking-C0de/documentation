@@ -5,9 +5,9 @@ sidebar_position: 4
 # Base Insurance Policy Contract
 
 - This page contains the documentation for the Base Insurance Policy contract. This contract is the main parent contract that is used to derive the child contracts. It contains the basic functionalities that are common to all the child contracts.
-- The Base Insurance Policy Contract uses Chainlink Keepers to automate the crucial processes of premium collection and claims payment for insurance policies. Chainlink Keepers provide reliable and decentralized automation, ensuring timely execution of tasks triggered by policy-specified time intervals.
-- The Base Insurance Policy Contract uses Chainlink Any API to connect to any external API. This feature allows us to provide more flexible and customizable insurance solutions. For example, to validate a claim for a flight delay insurance policy, we can use some external Flight Delay API to get the flight status and validate the claim.
-- The Base Insurance Policy Contract uses Chainlink Price Feeds to provide reliable and accurate price data for a wide range of assets. We have integrated Chainlink Price Feeds into our smart contract library to ensure that our insurance policies are using real time price data to perform operations.
+- The Base Insurance Policy Contract uses **Chainlink Keepers** to automate the crucial processes of premium collection and claims payment for insurance policies. Chainlink Keepers provide reliable and decentralized automation, ensuring timely execution of tasks triggered by policy-specified time intervals.
+- The Base Insurance Policy Contract uses **Chainlink Any API** to connect to any external API. This feature allows us to provide more flexible and customizable insurance solutions. For example, to validate a claim for a flight delay insurance policy, we can use some external Flight Delay API to get the flight status and validate the claim.
+- The Base Insurance Policy Contract uses **Chainlink Price Feeds** to provide reliable and accurate price data for a wide range of assets. We have integrated Chainlink Price Feeds into our smart contract library to ensure that our insurance policies are using real time price data to perform operations.
 - All these features are used in the Base Insurance Policy Contract and can be overridden in the child contracts to achieve modified and enhanced functionalities according to the needs.
 
 ## Note: Modifiers
