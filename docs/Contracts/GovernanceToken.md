@@ -5,7 +5,7 @@ sidebar_position: 6
 # Governor Token Contract
 
 - The page contains the documentation for the Governor Token contract that are essentially ERC20 tokens with the added functionality of voting.
-- This contract can be used to create personalized governance tokens for the DAO.
+- This contract can be used to create personalized governance tokens for the onchain DAO.
 
 ```js
 // SPDX-License-Identifier: MIT
