@@ -26,8 +26,8 @@ Before you begin, make sure you have the following prerequisites in place:
 To use BaseInsurancePolicy, you need to import the required dependencies. Ensure that you have the following contracts imported:
 
 ```js
-import "@kizunasafe/kizuna-safe-contracts/v08/BaseInsurancePolicy.sol";
-import "@kizunasafe/kizuna-safe-contracts/v08/SharedData.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/v08/BaseInsurancePolicy.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/v08/SharedData.sol";
 
 ```
 
@@ -39,7 +39,7 @@ import "@kizunasafe/kizuna-safe-contracts/v08/SharedData.sol";
 contract MyInsurancePolicy is BaseInsurancePolicy {
     // Implement your custom logic here
 }
-```
+``` 
 
 2. Initialize the contract: When deploying your insurance policy contract, pass the necessary parameters to initialize the `BaseInsurancePolicy` constructor. The constructor requires a `SharedData.Policy` object, the address of the Chainlink token (`LINK`), and the address of the price feed contract.
 
