@@ -51,7 +51,7 @@ abstract contract BaseInsurancePolicy is AutomationCompatible, ChainlinkClient, 
         address indexed policyAddress,
         uint256 indexed timestamp,
         uint256 withdrawnAmount
-    );
+    );asfdasij;
 
     /**
     note Internal and private variables
