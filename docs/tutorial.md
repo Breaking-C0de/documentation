@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Tutorial
 
-In this tutorial, we will explain how users can create their own insurance contracts by inheriting from the `BaseInsurancePolicy` contract. We will use the [LifeInsurancePolicy.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/LifeInsurancePolicy.sol)
+In this tutorial, we will explain how users can create their own insurance contracts by inheriting from the `BaseInsurancePolicy` contract. We will use the [LifeInsurancePolicy.sol](https://github.com/Breaking-C0de/contracts/blob/main/contracts/v08/examples/LifeInsurancePolicy.sol)
 contract as an example to demonstrate the step-by-step process.
 
 Let us first decide upon the basic requirements for our life insurance policy:
@@ -19,11 +19,11 @@ Start by creating a new Solidity file for your custom insurance contract. You ca
 
 ## Step 2: Import the BaseInsurancePolicy Contract
 
-Import the `BaseInsurancePolicy` and  `SharedData.sol` contracts from the `@kizunasafe/kizuna-safe-contracts/contracts` package.
+Import the `BaseInsurancePolicy` and `SharedData.sol` contracts from the `@kizunasafe/kizuna-safe-contracts/contracts` package.
 
 ```js
-import "@kizunasafe/kizuna-safe-contracts/v08/BaseInsurancePolicy.sol";
-import "@kizunasafe/kizuna-safe-contracts/v08/SharedData.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/v08/BaseInsurancePolicy.sol";
+import "@kizunasafe/kizuna-safe-contracts/contracts/v08/SharedData.sol";
 ```
 
 ## Step 3: Define Your Custom Structures and Errors
@@ -74,7 +74,6 @@ for example, in this case, we will be overriding the custom `withdraw` function 
     */
     function withdraw() public payable override isNotTerminated {
         bool isNominee = false;
-        //checking if the msg.sender is a nominee
         for (uint256 i = 0; i < s_lifePolicyParams.nominees.length; i++) {
             if (
                 msg.sender ==
@@ -87,17 +86,23 @@ for example, in this case, we will be overriding the custom `withdraw` function 
         if (!isNominee) revert PolicyNomineeNotFound();
         if (!s_policy.isClaimable) revert PolicyNotClaimable();
 
-        uint256 withdrawableAmount = s_policy.totalCoverageByPolicy;
-        //distributing funds to all the nominees
+        uint256 withdrawableAmount;
+        if (address(this).balance < s_policy.totalCoverageByPolicy)
+            withdrawableAmount = address(this).balance;
+        else withdrawableAmount = s_policy.totalCoverageByPolicy;
         for (uint256 i = 0; i < s_lifePolicyParams.nominees.length; i++) {
             s_lifePolicyParams.nominees[i].nomineeDetails.policyHolderWalletAddress.transfer(
                 (withdrawableAmount * s_lifePolicyParams.nominees[i].nomineeShare) / 100
             );
         }
-        setTermination(true);
+        s_policy.isTerminated = true;
     }
 ```
+> :warning: **Note**: You can learn more about the various modifiers (such as `isNotTerminated` , `onlyManager`  etc.), the events and errors emitted by the BaseInsurancePolicy contract in the [BaseInsurancePolicy](./Contracts/BaseInsurancePolicy) section.
+## Step 6: Claim Verification
+You can also add strategies to verify the claims made by policyHolder before allowing them
 
-## Step 6: Test and Deploy
+
+## Step 7: Test and Deploy
 
 Test your LifeInsurancePolicy contract using appropriate testing frameworks and tools. Refer to the [testing and deployment](./Deployment/Self%20Hosting%20Kizuna%20Safe.md) sections for more details.

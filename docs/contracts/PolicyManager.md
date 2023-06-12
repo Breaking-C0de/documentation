@@ -9,7 +9,7 @@ sidebar_position: 4
   > :warning: **Caution**: The withdraw function only uses the BaseInsurancePolicy contract's withdraw function. It does not use the withdraw function of the child contracts. To make it use the child contract's withdraw function, the user needs to define a custom withdraw function in the PolicyManager contract or override the current withdraw function.
 
 - The user may or may not include a copy of the `PolicyManager.sol` in his/her file structure.
-- It is not necessary to use this contract to manage the insurance policies. The user can also manage the insurance policies directly. But using this contract will make the management process easier and more streamlined.
+- It is not necessary to use this contract to manage the insurance policies. The user can also manage the insurance policies directly. But using this contract will make the management process much easier and more streamlined.
 
 ```js
 //SPDX-License-Identifier: MIT
@@ -97,7 +97,7 @@ contract PolicyManager {
     /**
     @dev function withdrawFundFromContract
     note This function is used to withdraw the coverageAmount from the contract
-    The function must be overridden if the withdraw functionality needs to be made different
+    The function must be overidden if the withdraw functionality needs to be made different
     */
     function withdrawFundFromContract(address payable contractAddress) public payable {
         // Get BaseContract

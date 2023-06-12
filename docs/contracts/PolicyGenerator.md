@@ -10,14 +10,14 @@ sidebar_position: 4
 
 - The user needs to define their own deploy functions to deploy the custom policy contracts. An example for a lifePolicy contract is given below.
 
-- The user may or may not include a copy of the `PolicyGenerator.sol` in his/her file structure.
+- The user may or may not include a copy of the `PolicyGenerator.sol` in his/her file structures.
 
 ```js
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "hardhat/console.sol";
 
-import "./LifeInsurancePolicy.sol";
+import "./examples/LifeInsurancePolicy.sol";
 import "./BaseInsurancePolicy.sol";
 import "./SharedData.sol";
 

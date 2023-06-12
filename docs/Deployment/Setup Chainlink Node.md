@@ -89,11 +89,11 @@ URL = 'postgresql://postgres:mysecretpassword@h<IP_ADDRESS_OF_POSTGRES_CONTAINER
 
 ### Setup the Chainlink node
 
-1. Visit the Chainlink node UI at http://localhost:6688 and login with the email id and password you entered in the previous step.
+1. Visit the Chainlink node UI at **http://localhost:6688** and login with the email id and password you entered in the previous step.
 
-2. You can find the oracle address in the node Operator GUI under the Key Management configuration.
+2. You can find the chainlink node address in the node Operator GUI under the Key Management configuration.
 
-3. Fund the oracle address with MATIC and LINK tokens. You can get both LINK and MATIC tokens from the [Chanlink faucet](https://faucets.chain.link/mumbai).
+3. Fund the node address with MATIC and LINK tokens. You can get both LINK and MATIC tokens from the [Chanlink faucet](https://faucets.chain.link/mumbai).
 
 ### Deploy your own Operator contract
 
@@ -103,7 +103,7 @@ URL = 'postgresql://postgres:mysecretpassword@h<IP_ADDRESS_OF_POSTGRES_CONTAINER
 
 3. On the Deploy and Run tab, configure the following settings:
 
-- Select "Injected Provider" as your Environment. The Javascript VM environment cannot access your oracle node. Make sure your Metamask is connected to Sepolia testnet.
+- Select "Injected Provider" as your Environment. The Javascript VM environment cannot access your oracle node. Make sure your Metamask is connected to Mumbai testnet. 
 
 - Select the "Operator" contract from the Contract menu.
 
@@ -116,6 +116,8 @@ URL = 'postgresql://postgres:mysecretpassword@h<IP_ADDRESS_OF_POSTGRES_CONTAINER
 4. Click transact. MetaMask prompts you to confirm the transaction.
 
 5. Keep note of the Operator contract address. You need it later for your consuming contract.
+
+6. Remeber, your oracle address is your deployed Operator contract address.
 
 ### Whitelist your node address in the Operator contract
 
@@ -137,4 +139,4 @@ URL = 'postgresql://postgres:mysecretpassword@h<IP_ADDRESS_OF_POSTGRES_CONTAINER
 
 After you add jobs to your node, you can use the node to fulfill requests as a Policy Claim Validation Strategy.
 
-For this example, you will can APICall contract from [here](https://github.com/Breaking-C0de/contracts/blob/main/contracts/v08/strategies/api/APICall.sol)
+For this example, you can import the `@kizunasafe/kizuna-safe-contracts/contracts/v08/strategies/api/APICall.sol` in your contract, and then you can use it to call any API. You might have to override the function if you want custom functionality, as the default implementation expects a bool to be returned from the API. 

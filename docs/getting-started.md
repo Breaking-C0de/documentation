@@ -4,7 +4,9 @@ sidebar_position: 2
 
 # Getting Started
 
-BaseInsurancePolicy is a smart contract library that provides the foundation for creating insurance policies on the Ethereum blockchain. It utilizes Chainlink automation, price feeds, and keepers to automate policy management and ensure accurate pricing information. This guide will walk you through the basic steps to get started with BaseInsurancePolicy and understand its key functionalities.
+# Purpose
+
+`BaseInsurancePolicy` is a smart contract that is part of the KizunaSafe library that provides the foundation for creating insurance policies on the Ethereum blockchain. It utilizes Chainlink automation, price feeds, and keepers to automate policy management and ensure accurate pricing information and claim verification. This guide will walk you through the basic steps to get started with BaseInsurancePolicy and understand its key functionalities.
 
 ## Prerequisites
 
@@ -18,7 +20,7 @@ Before you begin, make sure you have the following prerequisites in place:
 ## Installation
 
 # Set up
- Install the shiro-store npm package that includes all contracts:
+ Install the [kizunasafe](https://www.npmjs.com/package/@kizunasafe/kizuna-safe-contracts) npm package that includes all contracts:
 
 `npm i @kizunasafe/kizuna-safe-contracts`
 To use BaseInsurancePolicy, you need to import the required dependencies. Ensure that you have the following contracts imported:

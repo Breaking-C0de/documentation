@@ -11,8 +11,10 @@ sidebar_position: 4
 - The user can also make changes to the `SharedData.sol` contract as per their requirements and define custom structures, enums or data types.
 
   > :warning: **Caution**: Note that the **policyManagerAddress** is the address in which the policy amount will be transferred to in case policy is matured or the policy is terminated and the user has not claimed the policy amount. This address should be the address of the organization's wallet.
+  > :warning: **Caution**: Note that the **collaborators** is an array of address that can be used to add other managers to the policy. **It is advised to add Governance contracts as collaborators**.
 
-```js //SPDX-License-Identifier: MIT
+```js
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 // building a library for shared data
@@ -99,13 +101,14 @@ library SharedData {
     @param policyType This is the policy type
     @param policyManagerAddress This is the policy manager contract address
     @param admins This is the list of admins for the policy who are able to call certain functions
-     */
+    @param collaborators These are the list of collaborators who are also managers of the policy
+    */
     struct Policy {
         HumanDetails policyHolder;
         uint128 policyTenure;
         uint128 gracePeriod;
-        uint128 timeBeforeCommencement;
-        uint256 timeInterval; // 2630000 (in months) in seconds
+        uint128 timeBeforeCommencement; // in refer below TODO
+        uint256 timeInterval; // 2630000 (in months) in seconds TODO: make input in days and convert to seconds in contract by sudip given by debajyoti
         uint256 premiumToBePaid;
         uint256 totalCoverageByPolicy;
         bool hasClaimed;
@@ -118,6 +121,7 @@ library SharedData {
         PolicyType policyType;
         address payable policyManagerAddress;
         address[] admins;
+        address[] collaborators; // It should be dead address if there is no governor contract
     }
 }
 ```

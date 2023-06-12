@@ -55,4 +55,4 @@ module.exports.tags = ["all", "APICall", "main"];
 
 - You need to fund the contract with LINK tokens to make the API calls. You can get LINK tokens from the [Chainlink Faucet](https://faucets.chain.link/mumbai).
 
-- Once the claim has been validated, call the function `setClaimable()` in the `BaseInsurancePolicy` contract. Only then, the policy holder will be allowed to claim the insurance coverage amount.
+- Once the claim has been validated, the `isClaimable` property of the policy will be set to True depending on the result of the API call.
